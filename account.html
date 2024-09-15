@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .account-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .account-container h1 {
+            text-align: center;
+        }
+        .account-container label, .account-container input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .account-container input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .account-container input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="account-container">
+        <h1>Account Information</h1>
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" value="{{ user[0] }}" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" value="{{ user[1] }}" required>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" name="confirm_password" required>
+
+            <label for="pin">PIN:</label>
+            <input type="password" name="pin" value="{{ user[2] }}" required>
+
+            <label for="confirm_pin">Confirm PIN:</label>
+            <input type="password" name="confirm_pin" required>
+
+            <input type="submit" value="Update Account">
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

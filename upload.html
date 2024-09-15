@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+    .upload-container {
+        max-width: 500px;
+        margin: auto;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .upload-container h1 {
+        text-align: center;
+    }
+    .upload-container form {
+        display: flex;
+        flex-direction: column;
+    }
+    .upload-container label, .upload-container input {
+        margin-bottom: 10px;
+    }
+    .upload-container input[type="file"] {
+        padding: 5px;
+    }
+    .upload-container input[type="submit"] {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .upload-container input[type="submit"]:hover {
+        background-color: #555;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="upload-container">
+    <h1>Upload File/Video</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Choose file to upload:</label>
+        <input type="file" name="file" required>
+        <input type="submit" value="Upload">
+    </form>
+</div>
+{% endblock %}
